@@ -5,9 +5,30 @@ from rest_framework.generics import (
 from .models import Vacancy
 
 from .serializers import (
-    VacancyListSerializer
+    VacancyListSerializer,
+    VacancyRetrieveSerializer,
+    VacancyResumeCreateSerializer,
+    CreateResumeSerializer,
+    CreateVolunteerSerializer
 )
 
-class ListVacancyAPIView(ListAPIView):
+class VacancyListAPIView(ListAPIView):
     queryset = Vacancy.objects.all()
     serializer_class = VacancyListSerializer
+
+
+class VacancyRetrieveAPIView(RetrieveAPIView):
+    queryset = Vacancy.objects.all()
+    serializer_class = VacancyRetrieveSerializer
+
+
+class VacancyResumeCreateAPIView(CreateAPIView):
+    serializer_class = VacancyResumeCreateSerializer
+
+
+class ResumeCreateAPIView(CreateAPIView):
+    serializer_class = CreateResumeSerializer
+
+
+class VolunteerCreateAPIView(CreateAPIView):
+    serializer_class = CreateVolunteerSerializer
