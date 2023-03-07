@@ -56,7 +56,7 @@ class Employee_abroad(BaseModel):
     phone_number = models.CharField('Telefon nomeri', max_length=20)
     position = models.CharField('Lavozimi', max_length=150)
     email = models.EmailField('Elektron pochta', max_length=50)
-    tasks = models.TextField('Vziflari')
+    tasks = models.TextField('Vazifalari')
 
     def ___str__(self):
         return self.full_name

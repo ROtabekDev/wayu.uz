@@ -5,7 +5,8 @@ from .views import (
     VacancyRetrieveAPIView, 
     VacancyResumeCreateAPIView,
     ResumeCreateAPIView,
-    VolunteerCreateAPIView
+    VolunteerListCreateAPIView,
+    InternshipCreateAPIView
 )
 
 urlpatterns = [ 
@@ -13,5 +14,6 @@ urlpatterns = [
     path('vacancy/<int:pk>/', VacancyRetrieveAPIView.as_view()),
     path('create-vacancy-resume/', VacancyResumeCreateAPIView.as_view()),
     path('create-resume/', ResumeCreateAPIView.as_view()),
-    path('create-volunteer/', VolunteerCreateAPIView.as_view()),
+    path('create-volunteer/', VolunteerListCreateAPIView.as_view()),
+    path('create-internship/', InternshipCreateAPIView.as_view()),
 ]  

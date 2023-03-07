@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from rest_framework.serializers import ModelSerializer
 
-from .models import Vacancy, Vacancy_resume, Resume, Volunteer
+from .models import Vacancy, Vacancy_resume, Resume, Volunteer, Internship
 
 
 class VacancyListSerializer(ModelSerializer):
@@ -47,8 +47,14 @@ class CreateResumeSerializer(ModelSerializer):
         fields = ('full_name', 'phone_number', 'file')
 
 
-class CreateVolunteerSerializer(ModelSerializer):
+class CreateListVolunteerSerializer(ModelSerializer):
 
     class Meta:
         model = Volunteer
         fields = ('full_name', 'email', 'phone_number', 'resume_file')
+
+class CreateInternshipSerializer(ModelSerializer):
+
+    class Meta:
+        model = Internship
+        fields = ('full_name', 'email', 'phone_number', 'address', 'birthday', 'business_area', 'start_date', 'work_type', 'education', 'speciality', 'year_admission', 'year_ending', 'gpa', 'experience', 'key_skills', 'resume')
