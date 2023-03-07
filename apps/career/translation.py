@@ -6,7 +6,7 @@ from .models import (
 
 @register(Vacancy)
 class VacancyTranslationOptions(TranslationOptions):
-    fields = ('title', 'address', 'salary_type', 'description')
+    fields = ('title', 'address', 'description')
 
 
 @register(Work_type)

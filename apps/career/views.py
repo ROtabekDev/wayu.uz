@@ -1,3 +1,13 @@
-from django.shortcuts import render
+from rest_framework.generics import (
+    ListAPIView, CreateAPIView, RetrieveAPIView
+)
 
-# Create your views here.
+from .models import Vacancy
+
+from .serializers import (
+    VacancyListSerializer
+)
+
+class ListVacancyAPIView(ListAPIView):
+    queryset = Vacancy.objects.all()
+    serializer_class = VacancyListSerializer
